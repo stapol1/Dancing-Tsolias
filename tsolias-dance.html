@@ -124,6 +124,7 @@
     const restartBtn = document.getElementById('restartBtn');
     const shareBtn = document.getElementById('shareBtn');
 
+    // Load high score from localStorage
     let highScore = localStorage.getItem('tsoliasHighScore') || 0;
     highScoreDisplay.textContent = `High Score: ${highScore}`;
 
@@ -171,6 +172,7 @@
 
         updateScore(leg);
 
+        // Flip image based on leg
         if (leg === 'left') {
           heroImg.style.transform = 'scaleX(-1)';
         } else {
@@ -186,6 +188,7 @@
       button.addEventListener('touchend', endEvent);
     }
 
+    // Share on WhatsApp function
     shareBtn.addEventListener('click', () => {
       const shareText = `My Tsolias danced ${score} times! What about yours?`;
       const shareUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
